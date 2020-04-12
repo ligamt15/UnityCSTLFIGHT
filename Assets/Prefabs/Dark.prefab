@@ -403,7 +403,7 @@ MonoBehaviour:
     m_Bits: 0
   visibleTargets: []
   target: {fileID: 0}
-  way: {fileID: 3088168825750191788, guid: 0ad825ff56b92b84f8db277b04dc5f4d, type: 3}
+  way: {fileID: 0}
 --- !u!114 &3254320363937362220
 MonoBehaviour:
   m_ObjectHideFlags: 0

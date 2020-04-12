@@ -175,7 +175,7 @@ MonoBehaviour:
     m_Bits: 0
   visibleTargets: []
   target: {fileID: 0}
-  way: {fileID: 2825256790802007231, guid: 0a3ded6d59684424fb0fa83b9988410e, type: 3}
+  way: {fileID: 0}
 --- !u!114 &-7798624397298875823
 MonoBehaviour:
   m_ObjectHideFlags: 0

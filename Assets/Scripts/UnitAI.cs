@@ -29,13 +29,41 @@ public class UnitAI : MonoBehaviour
 
     void Update()
     {
-        destination = way.position;
-        agent.destination = destination;
-
+        //way = GameObject.FindGameObjectWithTag(currentTarget);
         if (target != null && Vector3.Distance(destination, target.position) > 1.0f)
         {
             destination = target.position;
             agent.destination = destination;
+        }
+        else
+        {
+            if (way == null)
+            {
+                Transform suka;
+                if (gameObject.tag == "Dark")
+                {
+                    suka = GameObject.FindGameObjectWithTag("GGWP").transform;
+                } else
+                {
+                    suka = GameObject.FindGameObjectWithTag("NOWP").transform;
+                }
+                way = suka;
+            }
+            destination = way.position;
+            agent.destination = destination;
+            if (gameObject.transform.position == way.position)
+            {
+                Transform suka;
+                if (gameObject.tag == "Dark")
+                {
+                    suka = GameObject.FindGameObjectWithTag("NOWP").transform;
+                }
+                else
+                {
+                    suka = GameObject.FindGameObjectWithTag("GGWP").transform;
+                }
+                way = suka;
+            }
         }
     }
 
