@@ -8,6 +8,8 @@ TagManager:
   - UnitPlayer2
   - DarkPlayer
   - Dark
+  - GGWP
+  - NOWP
   layers:
   - Default
   - TransparentFX
