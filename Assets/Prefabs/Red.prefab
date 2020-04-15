@@ -112,7 +112,7 @@ GameObject:
   - component: {fileID: 4657597255333572792}
   m_Layer: 9
   m_Name: Red
-  m_TagString: UnitPlayer1
+  m_TagString: UnitPlayer2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

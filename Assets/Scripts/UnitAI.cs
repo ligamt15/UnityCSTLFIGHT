@@ -16,22 +16,24 @@ public class UnitAI : MonoBehaviour
     public Transform way;
     Vector3 destination;
     NavMeshAgent agent;
+    Animator anim;
 
 
 
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
-        
+        anim = GetComponent<Animator>();
         StartCoroutine("FindTargetWithDelay", .2f);
-
+       
     }
 
     void Update()
     {
-        //way = GameObject.FindGameObjectWithTag(currentTarget);
+        Debug.DrawRay(destination, Vector3.up, Color.blue, 5.0f);
         if (target != null && Vector3.Distance(destination, target.position) > 1.0f)
         {
+            anim.SetBool("Walk", true);
             destination = target.position;
             agent.destination = destination;
         }
@@ -39,31 +41,21 @@ public class UnitAI : MonoBehaviour
         {
             if (way == null)
             {
-                Transform suka;
-                if (gameObject.tag == "Dark")
+                Transform wp;
+                if (gameObject.tag == "UnitPlayer1")
                 {
-                    suka = GameObject.FindGameObjectWithTag("GGWP").transform;
-                } else
-                {
-                    suka = GameObject.FindGameObjectWithTag("NOWP").transform;
-                }
-                way = suka;
-            }
-            destination = way.position;
-            agent.destination = destination;
-            if (gameObject.transform.position == way.position)
-            {
-                Transform suka;
-                if (gameObject.tag == "Dark")
-                {
-                    suka = GameObject.FindGameObjectWithTag("NOWP").transform;
+                    wp = GameObject.FindGameObjectWithTag("CastleUnit2").transform;
                 }
                 else
                 {
-                    suka = GameObject.FindGameObjectWithTag("GGWP").transform;
+                    wp = GameObject.FindGameObjectWithTag("CastleUnit1").transform;
                 }
-                way = suka;
+                way = wp;
             }
+            anim.SetBool("Walk", true);
+            destination = way.position;
+            agent.destination = destination;
+            
         }
     }
 
